@@ -9,6 +9,8 @@ public class CollisionPlayerWater : MonoBehaviour
     [SerializeField] Text text;
 
     private int points;
+    public int GetPoints() { return points; }
+
 
     private void Start()
     {
