@@ -8,6 +8,8 @@ public class CollisionPlayerWater : MonoBehaviour
     [Header("Where we will show points?")]
     [SerializeField] Text text;
 
+    [SerializeField] AudioSource audioPoint;
+
     private int points;
     public int GetPoints() { return points; }
 
@@ -23,6 +25,7 @@ public class CollisionPlayerWater : MonoBehaviour
         {
             Destroy(collision.gameObject);
             points += 1;
+            audioPoint.Play();
             text.text = "Points: " + points.ToString();
         }
     }

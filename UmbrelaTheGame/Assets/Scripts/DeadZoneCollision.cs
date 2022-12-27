@@ -11,6 +11,8 @@ public class DeadZoneCollision : MonoBehaviour
     [Header("Health Bar of this game")]
     [SerializeField] GameObject healthBarObj;
 
+    [SerializeField] AudioSource rainHitGround;
+
     private HealtBar healthBar;
 
     private void Start()
@@ -25,6 +27,7 @@ public class DeadZoneCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
             health -= 1;
+            rainHitGround.Play();
             healthBar.SetHealth(health);
             
         }
