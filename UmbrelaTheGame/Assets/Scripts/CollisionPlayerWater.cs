@@ -1,18 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class CollisionPlayerWater : MonoBehaviour
 {
     [Header("Where we will show points?")]
     [SerializeField] Text text;
 
-    [SerializeField] AudioSource audioPoint;
+    [Header("Audio sorce for water hits player")]
+    [SerializeField] AudioSource PointSound;
 
+    //Points in our game. They should be modified only there, but could be get from there to other scripts.
     private int points;
     public int GetPoints() { return points; }
-
 
     private void Start()
     {
@@ -25,7 +24,7 @@ public class CollisionPlayerWater : MonoBehaviour
         {
             Destroy(collision.gameObject);
             points += 1;
-            audioPoint.Play();
+            PointSound.Play();
             text.text = "Points: " + points.ToString();
         }
     }
