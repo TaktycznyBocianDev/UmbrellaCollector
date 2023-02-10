@@ -1,3 +1,4 @@
+(Polska wersja językowa/Polish version: https://github.com/TaktycznyBocianDev/UmbrellaCollector/blob/main/README_PL.md)
 
 # Umbrella The Game
 
