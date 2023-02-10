@@ -1,43 +1,35 @@
 
 # Umbrella The Game
 
-Mała gra oparta na zbieraniu przedmiotów — kropel deszczu — spadających z góry.
-Gracz steruje parasolką, która niejako chroni jej posiadacza przed zmoknięciem.
+A small game based on collecting objects - raindrops - that are falling from above. The player controls an umbrella, which protects its holder from getting
+wet.
 
-Jednym z najważniejszych wyzwań w tym projekcie była presja czasu — projekt bowiem od początku do końca zajął mi 1h 29min 11sec.
-
-
+One of the most important challenges in this project was time pressure - as the project took me 1h 29min 11sec from start to finish.
 
 
 
-## Zdobyte doświadczenie:
 
-- praca z Unity pod presją czasu
+## Experience gained:
+
+- Working with Unity under time pressure
 - Game menu 
-- mechanika "Best Score"
-- dopracowywanie projektu wg wskazówek "klienta"
+- "Best Score" mechanics
+- refining the project according to the instructions of the "client"
 ## Features
 
-- Lokalne best score
-- Mechanika HP oraz punktów
-- Poruszanie
+- Local best score
+- HP and points mechanics
+- Moving
 - UI
-- Prefabs oraz ich tworzenie na scenie
-- Muzyka i dzwięki w grze
+- Prefabs and their creation on stage
+- Music and sounds in the game
+## About the Game 
 
-
-## O samej grze
-
-
-W swoich założeniach jest ona bardzo prosta. Gracz steruje parasolem na dole ekranu
-przesuwając go w lewo bądź w prawo. W ten sposób łapie krople, które spadają z góry. 
-
-Gracz ma 5 punktów hp, pokazanych jako pasek. Po przegranej na ekranie wyświetlany jest wynik w danej rundzie oraz najlepszy wynik lokalny.
-
-
+In its assumptions, it is very simple. The player controls the umbrella at the bottom of the screen by moving it left or right. By doing so, he catches drops that fall from above. 
+The player has 5 hp points, shown as a bar. After losing, the screen displays the score for the round and the best local score.
 ## Best Score 
 
-Mechanika zliczania punktów oraz zapisywania najwyższego wyniku znajduje się w BestScoreSystem.cs.
+The mechanics of counting points and storing the highest score can be found in BestScoreSystem.cs.
 
 ```javascript
 private void NewBest(int points)
@@ -72,14 +64,14 @@ private void NewBest(int points)
     }
 ```
 
-Cały trzon mechaniki znajduje się w tej funkcji - możemy albo stworzyć zupełnie nowy zapis przy pierwszej grze, albo sprawdzić, czy uzyskane punkty faktycznie są nowym najlepszym wynikiem. Jeśli tak, nadpisujemy plik .json. Jeśli nie - tylko wyświetlamy rezultat oraz odczytany najlepszy wynik.
+The whole core of the mechanics is in this function - we can either create a completely new record the first time we play, or check if the points obtained are indeed the new best score. If yes, we overwrite the .json file. If not - we just display the result and the read best score.
 
 
 
 ## Rain Maker
 
-Rain maker to skrypt mający na celu tworzyć nowe krople wody na górze sceny. One natomiast są prefabem - przygotowanym wcześniej obiektem do kopiowania.
-Zastosowanie ma tu także Coroutine, pozwalająca rozłożyć pojawianie się kropel - MakeWaterDrop() - w czasie. 
+Rain maker is a script designed to create new water drops on top of the scene. They are prefab - a pre-prepared object to be copied.
+Coroutine is also used here, allowing to stagger the appearance of the drops - MakeWaterDrop() - over time.
 
 ```javascript
 public class RainMaker : MonoBehaviour
@@ -112,12 +104,12 @@ public class RainMaker : MonoBehaviour
 
 
 ![App Screenshot](https://github.com/TaktycznyBocianDev/UmbrellaCollector/blob/main/Screens/1.jpg?raw=true)
-Początek gry
+The beginning of the game
 
 ![App Screenshot](https://github.com/TaktycznyBocianDev/UmbrellaCollector/blob/main/Screens/2.jpg?raw=true)
-Parasolka przy pracy :)
+Umbrella at work :)
 
 ![App Screenshot](https://github.com/TaktycznyBocianDev/UmbrellaCollector/blob/main/Screens/3.jpg?raw=true)
-Ukazanie nowego najwyższego wyniku
+Showing new highest score
 
 
